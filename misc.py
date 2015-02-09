@@ -18,7 +18,7 @@ def cycles():
     """
     Return number of cycles passed in simulation.
     """
-    return now() / 2
+    return now()/2
 
 
 def clean_vcd(file_name=None):
