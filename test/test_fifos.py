@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-"""Test myhdl_atk fifos.py.
+"""Test myhdl_arch fifos.py.
 """
 __author__ = 'Uri Nix'
 
@@ -9,7 +9,7 @@ import unittest
 import myhdl
 
 import sys; sys.path.append(r"../..")
-import myhdl_atk
+import myhdl_arch
 
 ### Classes and Core functions ###############################################
 
@@ -88,10 +88,10 @@ class TestSClkFifo(unittest.TestCase):
         self.sink_plan = [1]
         if test_parameters:
             self.__dict__.update(test_parameters)
-        self.clkgen = myhdl_atk.clocks.ClockGen()
+        self.clkgen = myhdl_arch.clocks.ClockGen()
         self.source = Source(self.source_plan)
         self.sink = Sink(self.sink_plan)
-        self.fifo = myhdl_atk.fifos.SCFifo(self.depth)
+        self.fifo = myhdl_arch.fifos.SCFifo(self.depth)
 
     def shortDescription(self):
         return self.name
@@ -141,12 +141,12 @@ class TestDClkFifo(unittest.TestCase):
         self.sink_plan = [1]
         if test_parameters:
             self.__dict__.update(test_parameters)
-        self.clkgen = myhdl_atk.clocks.ClockGen()
-        self.clkdiv_wr = myhdl_atk.clocks.ClockDivide(self.wr_ratio, self.wr_ratio)
-        self.clkdiv_rd = myhdl_atk.clocks.ClockDivide(self.rd_ratio, self.rd_ratio)
+        self.clkgen = myhdl_arch.clocks.ClockGen()
+        self.clkdiv_wr = myhdl_arch.clocks.ClockDivide(self.wr_ratio, self.wr_ratio)
+        self.clkdiv_rd = myhdl_arch.clocks.ClockDivide(self.rd_ratio, self.rd_ratio)
         self.source = Source(self.source_plan)
         self.sink = Sink(self.sink_plan)
-        self.fifo = myhdl_atk.fifos.DCFifo(self.depth)
+        self.fifo = myhdl_arch.fifos.DCFifo(self.depth)
 
     def shortDescription(self):
         return self.name
@@ -287,4 +287,4 @@ Command line exploration.
     top_inst = myhdl.traceSignals(test.prepareDUT)
     sim = myhdl.Simulation(top_inst)
     sim.run(ticks)
-    myhdl_atk.misc.clean_vcd()
+    myhdl_arch.misc.clean_vcd()

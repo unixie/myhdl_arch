@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-"""Test myhdl_atk clocks.py.
+"""Test myhdl_arch clocks.py.
 """
 __author__ = 'Uri Nix'
 
@@ -9,7 +9,7 @@ import unittest
 import myhdl
 
 import sys; sys.path.append(r"../..")
-import myhdl_atk
+import myhdl_arch
 
 ### Classes and Core functions ###############################################
 
@@ -63,8 +63,8 @@ class TestClockDivide(unittest.TestCase):
         if test_parameters:
             self.__dict__.update(test_parameters)
         self.monitor = ClockMonitor()
-        self.clkgen = myhdl_atk.clocks.ClockGen()
-        self.clkdiv = myhdl_atk.clocks.ClockDivide(self.high, self.low)
+        self.clkgen = myhdl_arch.clocks.ClockGen()
+        self.clkdiv = myhdl_arch.clocks.ClockDivide(self.high, self.low)
 
     def shortDescription(self):
         return self.name
@@ -161,4 +161,4 @@ Command line exploration.
     top_inst = myhdl.traceSignals(test.prepareDUT)
     sim = myhdl.Simulation(top_inst)
     sim.run(args.ticks)
-    myhdl_atk.misc.clean_vcd()
+    myhdl_arch.misc.clean_vcd()
