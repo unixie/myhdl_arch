@@ -2,17 +2,10 @@ MyHDL Arch
 ==========
 
 
-What is MyHDL?
---------------
-`MyHDL <http://www.myhdl.org/>`_ is a free, open-source package for using Python as a hardware
-description and verification language.
-
-
 What is MyHDL Arch?
 -------------------
-This package contains common components for *architectural* hardware modelling, utilizing MyHDL as an
-infrastructure for idioms and simulation. Thus idioms such as signals and waveforms are shared 
-between architects and designers.
+This package contains common components for *architectural* hardware modelling, utilizing `MyHDL <http://www.myhdl.org/>`_ as an infrastructure for idioms and simulation.
+Thus idioms such as signals and waveforms are shared between architects and designers.
 
 Loosely comparable to SystemC TLM 1.0, the package contains a clock generator and dual-clock FIFO,
 which can be used to add a timed aspect to otherwise sequential models.
@@ -26,12 +19,14 @@ License
 MyHDL Arch is available under the MIT license.  See LICENSE.txt.
 
 MyHDL Arch does not contain derivative of any portion of MyHDL source code, 
-but is designed to work with MyHDL, therefore is a work that uses MyHDL.
+but is designed to work with MyHDL.
 
 
 Installation
 ------------
-TBA: update after adding to PYPI.
+Proper installation is WIP, in the meantime please clone and follow the usage instructions.
+
+.. Note:: Requires myhdl version 0.7 onwards, available on `PYPI <http://pypi.python.org/pypi/myhdl/>`_
 
 
 Usage
@@ -48,4 +43,5 @@ Each test suite can be executed in two manners:
   $ cd <path_to_myhdl_arch>/test
   $ ./test_clocks.py --help
 
+The standalone method is useful for exploration and development.
 
