@@ -8,7 +8,12 @@ __author__ = 'Uri Nix'
 import unittest
 import myhdl
 
-import sys; sys.path.append(r"../..")
+import os
+this_dir = os.path.dirname(os.path.realpath(__file__))
+module_dir = os.path.join(this_dir, r"../..")
+import sys
+sys.path.append(module_dir)
+
 import myhdl_arch
 
 ### Classes and Core functions ###############################################
